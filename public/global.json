@@ -1,6 +1,7 @@
 {
     "$schema": "https://raw.githubusercontent.com/reVISit-studies/study/main/src/parser/GlobalConfigSchema.json",
     "configsList": [
+        "a_surprise_map_study",
         "demo-html",
         "demo-cleveland",
         "demo-brush-interactions",
@@ -15,6 +16,9 @@
         "demo-image"
     ],
     "configs": {
+        "a_surprise_map_study": {
+            "path": "a_surprise_map_study/config.json"
+        },
         "demo-html": {
             "path": "demo-html/config.json"
         },
