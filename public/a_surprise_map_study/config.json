@@ -18,12 +18,12 @@
         "logoPath": "revisitAssets/revisitLogoSquare.svg",
         "withProgressBar": true,
         "autoDownloadStudy": false,
-        "sidebar": false,
+        "sidebar": false
     },
     "components": {
         "consent": {
-            "type": "website",
-            "path": "a_surprise_map_study/surprise-study/index.html",
+            "type": "markdown",
+            "path": "a_surprise_map_study/assets/consent.md",
             "response": []
         },
         "introduction": {
