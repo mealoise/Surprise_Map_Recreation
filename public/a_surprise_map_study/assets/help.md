@@ -13,6 +13,4 @@ The Surprise value is a measure of our change in belief given what we already kn
 
 We will ask you to use this map to give feedback on the task, based on where we can focus our marketing efforts in order to improve sales. 
 
-For a hands-on walk-through click the Start Training button. To go back to the experiment, tap outside of the help box.
-
-<button onclick="startTour()">Start Tour</button>
+**For a hands-on walk-through, return to the experiment and click the Tutorial icon above the map.** To go back to the experiment, tap outside of the help box.

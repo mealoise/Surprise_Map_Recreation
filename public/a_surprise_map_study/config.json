@@ -24,7 +24,16 @@
         "consent": {
             "type": "markdown",
             "path": "a_surprise_map_study/assets/consent.md",
-            "response": []
+            "response": [
+                {
+                    "id": "signature",
+                    "prompt": "Your signature",
+                    "required": true,
+                    "location": "belowStimulus",
+                    "type": "shortText",
+                    "placeholder": "Please provide your signature"
+                }
+            ]
         },
         "introduction": {
             "type": "website",
