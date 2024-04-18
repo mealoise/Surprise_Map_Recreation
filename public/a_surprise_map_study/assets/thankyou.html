@@ -1,5 +1,6 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,26 +15,31 @@
   <script src="../js/nobacknav.js"></script>
 </head>
 <script>
-	sendData();
+  sendData();
 </script>
-<body>
-  <header>How would you interpret this map?</header>    
-    <div class="container">
 
-      <div class="row justify-content-center">
-        <div class="col">
-		      <h4 class="display-3">Thank You!</h4>
-          <p style="font-size: 14px; text-align: center;">Your submission has been received. Completion Time: <b>00:<script>document.write(String(duration).slice(19,24))</script></b><br/><br/> Click the button below to complete the experiment.</p>
-        </div>
+<body>
+  <header style="background-color: #228be6;">
+    How would you interpret this map?</header>
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <div class="col">
+        <h4 class="display-3">Thank You!</h4>
+        <p style="font-size: 14px; text-align: center;">Your submission has been received. Completion Time: <b>00:
+            <script>document.write(String(duration).slice(19, 24))</script>
+          </b><br /><br /> Click the button below to complete the experiment.</p>
       </div>
-		</div>
-    <footer id="footer"></footer>
-	</div>
+    </div>
+  </div>
+  <footer id="footer" style="background-color: white;"></footer>
+  </div>
   <script>
-    function redirectParticipant(){
+    function redirectParticipant() {
       // repace cc
       window.location = 'https://app.prolific.co/submissions/complete?cc=??'
     }
   </script>
 </body>
+
 </html>

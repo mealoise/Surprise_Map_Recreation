@@ -32,7 +32,7 @@
     }
     getVar();
   </script>
-  <header class="fixed-top">How would you interpret this map?</header>
+  <header class="fixed-top" style="background-color: #228be6;">How would you interpret this map?</header>
 
   <div class="container-fluid">
     <div class="row">
@@ -210,26 +210,26 @@
         </div>
       </div>
     </div>
-  </div> -->
-  <!--<footer class="fixed-bottom"></footer>
-      <script src='../js/scroller.js'></script>
-      <script src='../js/sections.js'></script>
-      <script>
-        (function () {
-          const eDown = Array.from(document.querySelectorAll('.card-scrolldown'));
-          eDown.forEach(el => {
-            el.addEventListener('click', function () {
-              el.closest('.step').nextElementSibling.scrollIntoView();
-            });
-          });
-          const eUp = Array.from(document.querySelectorAll('.card-scrollup'));
-          eUp.forEach(el => {
-            el.addEventListener('click', function () {
-              el.closest('.step').previousElementSibling.scrollIntoView();
-            });
-          });
-        })()
-      </script>
+  </div>
+  <footer class="fixed-bottom" style="background-color: white;"></footer>
+  <script src='../js/scroller.js'></script>
+  <script src='../js/sections.js'></script>
+  <script>
+    (function () {
+      const eDown = Array.from(document.querySelectorAll('.card-scrolldown'));
+      eDown.forEach(el => {
+        el.addEventListener('click', function () {
+          el.closest('.step').nextElementSibling.scrollIntoView();
+        });
+      });
+      const eUp = Array.from(document.querySelectorAll('.card-scrollup'));
+      eUp.forEach(el => {
+        el.addEventListener('click', function () {
+          el.closest('.step').previousElementSibling.scrollIntoView();
+        });
+      });
+    })()
+  </script>
 </body>
 
 </html>
