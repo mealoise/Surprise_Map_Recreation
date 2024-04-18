@@ -10,11 +10,22 @@ import { PREFIX as BASE_PREFIX } from '../utils/Prefix';
 
 const PREFIX = '@REVISIT_COMMS';
 
-const defaultStyle = {
-  minHeight: '500px',
+const iframeContainerStyle: React.CSSProperties = {
+  position: 'relative',
   width: '100%',
-  border: 0,
-  marginTop: '-50px',
+  height: '73.5vh',
+  overflow: 'hidden',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+};
+
+const iframeStyle: React.CSSProperties = {
+  position: 'absolute',
+  width: '90%',
+  height: '38.2rem',
 };
 
 export default function IframeController({ currentConfig }: { currentConfig: WebsiteComponent; }) {
@@ -24,12 +35,17 @@ export default function IframeController({ currentConfig }: { currentConfig: Web
 
   const ref = useRef<HTMLIFrameElement>(null);
 
-  const iframeId = useMemo(
-    () => (crypto.randomUUID ? crypto.randomUUID() : `testID-${Date.now()}`),
-    [],
-  );
+  const iframeId = useMemo(() => (crypto.randomUUID ? crypto.randomUUID() : `testID-${Date.now()}`), []);
 
-  // navigation
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    window.scrollTo(0, 0);
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
   const currentStep = useCurrentStep();
   const currentComponent = useFlatSequence()[currentStep];
   const navigate = useNavigate();
@@ -50,17 +66,16 @@ export default function IframeController({ currentConfig }: { currentConfig: Web
   );
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
+  useEffect(() => {
     const handler = (e: MessageEvent) => {
       const { data } = e;
       if (typeof data === 'object' && iframeId === data.iframeId) {
         switch (data.type) {
-          case `${PREFIX}/WINDOW_READY`:
-            if (currentConfig.parameters) {
-              sendMessage('STUDY_DATA', currentConfig.parameters);
-            }
-            break;
           case `${PREFIX}/READY`:
-            if (ref.current) {
+            if (ref.current && data.message && data.message.documentHeight) {
               ref.current.style.height = `${data.message.documentHeight}px`;
             }
             break;
@@ -76,22 +91,15 @@ export default function IframeController({ currentConfig }: { currentConfig: Web
     window.addEventListener('message', handler);
 
     return () => window.removeEventListener('message', handler);
-  }, [
-    storeDispatch,
-    currentStep,
-    dispatch,
-    iframeId,
-    navigate,
-    currentConfig,
-    sendMessage,
-  ]);
+  }, [storeDispatch, currentStep, dispatch, iframeId, navigate, currentConfig, sendMessage]);
 
   return (
-    <div>
+    <div style={iframeContainerStyle}>
       <iframe
         ref={ref}
         src={`${BASE_PREFIX}${currentConfig.path}?trialid=${currentComponent}&id=${iframeId}`}
-        style={defaultStyle}
+        style={iframeStyle}
+        frameBorder="0"
       />
     </div>
   );
