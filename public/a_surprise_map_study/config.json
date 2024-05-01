@@ -4,7 +4,7 @@
         "title": "Surprise Map Study",
         "version": "pilot",
         "authors": [
-            "Akim Ndlovu, Hilson Shrestha, and Lane Harrison adapted for ReVISTit by Megan Aloise and Luke Foley"
+            "Akim Ndlovu, Hilson Shrestha, and Lane Harrison adapted for ReVISit by Megan Aloise and Luke Foley"
         ],
         "date": "2024-04-07",
         "description": "explores peoples takeaways from maps that use surprise and suppression to offset biases in choropleth maps",
@@ -24,7 +24,16 @@
         "consent": {
             "type": "markdown",
             "path": "a_surprise_map_study/assets/consent.md",
-            "response": []
+            "response": [
+                {
+                    "id": "signature",
+                    "prompt": "Your signature",
+                    "required": true,
+                    "location": "belowStimulus",
+                    "type": "shortText",
+                    "placeholder": "Please provide your signature"
+                }
+            ]
         },
         "introduction": {
             "type": "website",
@@ -40,7 +49,16 @@
         "explore": {
             "type": "website",
             "path": "a_surprise_map_study/assets/explore.html",
-            "response": []
+            "response": [
+                {
+                    "id": "explore_response",
+                    "prompt": "The Surprise Map summarizes counties with interesting sales rates, based on the national average. A county can show either high surprise, low surprise or no surprise.<br><br>**Task:** Explore the map, then write a short narrative on where you would focus your marketing efforts to increase the sales of the product.",
+                    "required": true,
+                    "location": "belowStimulus",
+                    "type": "longText",
+                    "placeholder": ""
+                }
+            ]
         },
         "thank-you": {
             "type": "website",

@@ -49,22 +49,22 @@ var erfc = function (x) {
     t *
     Math.exp(
       -z * z -
-        1.26551223 +
+      1.26551223 +
+      t *
+      (1.00002368 +
         t *
-          (1.00002368 +
+        (0.37409196 +
+          t *
+          (0.09678418 +
             t *
-              (0.37409196 +
+            (-0.18628806 +
+              t *
+              (0.27886807 +
                 t *
-                  (0.09678418 +
-                    t *
-                      (-0.18628806 +
-                        t *
-                          (0.27886807 +
-                            t *
-                              (-1.13520398 +
-                                t *
-                                  (1.48851587 +
-                                    t * (-0.82215223 + t * 0.17087277))))))))
+                (-1.13520398 +
+                  t *
+                  (1.48851587 +
+                    t * (-0.82215223 + t * 0.17087277))))))))
     );
   return x >= 0 ? r : 2 - r;
 };
@@ -422,18 +422,16 @@ function drawGraph(mapType) {
           )
             return `No data available`;
           else
-            return `<b><p style="text-align: left; margin: 0px; padding: 0px; background-color: white;">${
-              county.recip_county
-            } (${county.recip_state})</p></b>
+            return `<b><p style="text-align: left; margin: 0px; padding: 0px; background-color: white;">${county.recip_county
+              } (${county.recip_state})</p></b>
 					<table style="width: 100%; margin-top: 0px; padding: 0px;"><tr style="border-bottom: 0.8px solid black;"><td>Sales Rate</td><td>Surprise</td><td>Population</td></tr><tr><td style="font-size: 12px;">${numeral(
-            county.series_complete_pop_pct.toFixed(2)
-          ).format(
-            "0%"
-          )}</td><td style="font-size: 12px;">${county.surprise.toFixed(
-              3
-            )}</td><td style="font-size: 12px;">${
-              county.census2019
-            }</td></tr></table>`;
+                county.series_complete_pop_pct.toFixed(2)
+              ).format(
+                "0%"
+              )}</td><td style="font-size: 12px;">${county.surprise.toFixed(
+                3
+              )}</td><td style="font-size: 12px;">${county.census2019
+              }</td></tr></table>`;
         });
 
       let legendID;

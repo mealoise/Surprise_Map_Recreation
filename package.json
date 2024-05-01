@@ -6,7 +6,7 @@
   "scripts": {
     "buildDocs": "yarn typedoc",
     "serve": "vite --host=0.0.0.0 --port=8080",
-    "build": "tsc && VITE_STORAGE_ENGINE=firebase vite build",
+    "build": "tsc && set VITE_STORAGE_ENGINE=firebase && vite build",
     "lint": "eslint src",
     "postinstall": "husky install",
     "generate-schema:StudyConfig": "ts-json-schema-generator --path src/parser/types.ts --out src/parser/StudyConfigSchema.json --type StudyConfig",
@@ -37,7 +37,7 @@
     "d3": "^7.8.2",
     "dayjs": "1.11.10",
     "eslint-config-airbnb": "^19.0.4",
-    "firebase": "^10.7.0",
+    "firebase": "^10.11.0",
     "hjson": "^3.2.2",
     "localforage": "^1.10.0",
     "lodash.debounce": "^4.0.8",
