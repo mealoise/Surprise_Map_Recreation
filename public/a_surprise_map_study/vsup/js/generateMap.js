@@ -81,7 +81,7 @@ function removeRow(id){
 	if (counties.length) {
 		counties.forEach(function(county){	
 			let ct = getCountyByFips(county)
-			row += '<div class="row-county" id="' + county +'"><button class="btn btn-primary btn-sm" id="' + id + '" type="button" onclick="removeRow(this.id)" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click to Remove County" class="form-control btn-danger" style="font-size: 14px; vertical-align:middle;"><i class="fa fa-times"></i> '+ ct.recip_county + ', ' + ct.recip_state + '</button></div>'
+			row += '<div class="row-county" id="' + county +'"><button class="btn light-green btn-sm" id="' + id + '" type="button" onclick="removeRow(this.id)" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click to Remove County" class="form-control btn-danger" style="font-size: 14px; vertical-align:middle;"><i class="fa fa-times"></i> '+ ct.recip_county + ', ' + ct.recip_state + '</button></div>'
 		})
 		document.getElementById("rowCounties").innerHTML = row;
 	} else {
@@ -298,7 +298,7 @@ function drawGraph() {
 				let county = countyData.recip_county
 				mouseClick.push({'state':countyData.recip_state,'county': countyData.recip_county, 'fips': el.id, 'sales-rate': countyData.series_complete_pop_pct,'surprise': countyData.surprise, 'idle_duration': mouseIdleTime, 'mapType': 'vsup'})
 				if ((count < 5) && (counties.indexOf(el.id) == -1)){
-					row += '<div class="row-county" id="' + el.id +'"><button class="btn btn-primary btn-sm" id="' + el.id + '" type="button" onclick="removeRow(this.id)" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click to Remove County" class="form-control btn-danger" style="font-size: 14px; vertical-align:middle;"><i class="fa fa-times"></i> '+ county + ', ' + countyData.recip_state + '</button></div>'
+					row += '<div class="row-county" id="' + el.id +'"><button class="btn light-green btn-sm" id="' + el.id + '" type="button" onclick="removeRow(this.id)" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click to Remove County" class="form-control btn-danger" style="font-size: 14px; vertical-align:middle;"><i class="fa fa-times"></i> '+ county + ', ' + countyData.recip_state + '</button></div>'
 					document.getElementById("rowCounties").innerHTML = row;
 					count += 1
 					counties.push(+el.id)	

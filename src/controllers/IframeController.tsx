@@ -12,8 +12,8 @@ const PREFIX = '@REVISIT_COMMS';
 
 const iframeContainerStyle: React.CSSProperties = {
   position: 'relative',
-  width: '100%',
-  height: '73.5vh',
+  width: '90%',
+  height: '62vh',
   overflow: 'hidden',
   display: 'flex',
   justifyContent: 'center',
@@ -25,7 +25,7 @@ const iframeContainerStyle: React.CSSProperties = {
 const iframeStyle: React.CSSProperties = {
   position: 'absolute',
   width: '90%',
-  height: '38.2rem',
+  height: '32.4rem',
 };
 
 export default function IframeController({ currentConfig }: { currentConfig: WebsiteComponent; }) {
