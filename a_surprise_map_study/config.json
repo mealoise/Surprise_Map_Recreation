@@ -1,0 +1,70 @@
+{
+    "$schema": "https://raw.githubusercontent.com/reVISit-studies/study/main/src/parser/StudyConfigSchema.json",
+    "studyMetadata": {
+        "title": "Surprise Map Study",
+        "version": "pilot",
+        "authors": [
+            "Akim Ndlovu, Hilson Shrestha, and Lane Harrison adapted for ReVISit by Megan Aloise and Luke Foley"
+        ],
+        "date": "2024-04-07",
+        "description": "explores peoples takeaways from maps that use surprise and suppression to offset biases in choropleth maps",
+        "organizations": [
+            "WPI"
+        ]
+    },
+    "uiConfig": {
+        "contactEmail": "test@test.com",
+        "helpTextPath": "a_surprise_map_study/assets/help.md",
+        "logoPath": "revisitAssets/revisitLogoSquare.svg",
+        "withProgressBar": true,
+        "autoDownloadStudy": false,
+        "sidebar": false
+    },
+    "components": {
+        "consent": {
+            "type": "markdown",
+            "path": "a_surprise_map_study/assets/consent.md",
+            "response": [
+                {
+                    "id": "signature",
+                    "prompt": "Your signature",
+                    "required": true,
+                    "location": "belowStimulus",
+                    "type": "shortText",
+                    "placeholder": "Please provide your signature"
+                }
+            ]
+        },
+        "introduction": {
+            "type": "website",
+            "path": "a_surprise_map_study/assets/intro.html",
+            "nextButtonText": "Begin Experiment",
+            "response": []
+        },
+        "identify": {
+            "type": "website",
+            "path": "a_surprise_map_study/assets/identify.html",
+            "response": []
+        },
+        "explore": {
+            "type": "website",
+            "path": "a_surprise_map_study/assets/explore.html",
+            "response": []
+        },
+        "thank-you": {
+            "type": "website",
+            "path": "a_surprise_map_study/assets/thankyou.html",
+            "response": []
+        }
+    },
+    "sequence": {
+        "order": "fixed",
+        "components": [
+            "consent",
+            "introduction",
+            "identify",
+            "explore",
+            "thank-you"
+        ]
+    }
+}

@@ -1,0 +1,171 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.min.js'></script>
+  <script src="https://kit.fontawesome.com/581d0822b8.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.7.0/d3.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <title>Introduction</title>
+</head>
+
+<body>
+  <header class="fixed-top">How would you interpret this map?</header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4" id="sections">
+        <div class="step my-2 py-5">
+          <div class="card">
+            <div class="card-header">
+              Background
+            </div>
+            <div class="card-body">
+              <div class="card-text">
+                <p>
+                  For the purposes of this study, you are a marketing/sales manager at Company X.
+                </p>
+                <p>
+                  Company X has a new product line that is being distributed nationally.
+                </p>
+                <p>
+                  The primary sales metric is <strong>sales as a percentage of total county population</strong>.
+                  The product is performing well in some counties, but poorly in other counties.
+                </p>
+              </div>
+              <p class="card-scrolldown text-end">Scroll Down <i class="fa-solid fa-arrow-down"></i></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="step my-5 py-5">
+          <div class="card">
+            <div class="card-header">
+              Task
+              <p class="card-scrollup text-end">Scroll Up <i class="fa-solid fa-arrow-up"></i></p>
+            </div>
+            <div class="card-body">
+              <div class="card-text">
+                <p>
+                  Your goal is to identify:
+                </p>
+                <ol class="text-start">
+                  <li>Five of the lowest performing counties, where Company X will send additional marketing resources.
+                  </li>
+                  <li>Five of the best performing counties, where Company X will send a team there to learn about local
+                    sales
+                    strategies.
+                  </li>
+                </ol>
+              </div>
+              <p class="card-scrolldown text-end">Scroll Down <i class="fa-solid fa-arrow-down"></i></p>
+            </div>
+          </div>
+        </div>
+
+        <div class='step my-5 py-5'>
+          <div class="card">
+            <div class="card-header">
+              Map Resource
+              <p class="card-scrollup text-end">Scroll Up <i class="fa-solid fa-arrow-up"></i></p>
+            </div>
+            <div class="card-body">
+              <div class="card-text">
+                <p>
+                  To aid you in identifying key counties, the Company X Data Science team has produced a map.
+                  This map includes a special metric, <strong>"surprise"</strong>, which is a statistical measure of how
+                  surprising a sales rate is for a given county.
+                </p>
+                <p><strong>
+                    Sales can be surprisingly high, or surprisingly low.
+                    However, sales can also be high or low but not surprising.</strong>
+                </p>
+              </div>
+              <p class="card-scrolldown text-end">Scroll Down <i class="fa-solid fa-arrow-down"></i></p>
+            </div>
+          </div>
+        </div>
+        <div class="step my-5 py-5">
+          <div class="card">
+            <div class="card-header">Unsurprising Rates
+              <p class="card-scrollup text-end">Scroll Up <i class="fa-solid fa-arrow-up"></i></p>
+            </div>
+            <div class="card-body">
+              <div class="card-text">
+                <p>
+                  Sales rates that are not surprising usually occur when a county has a smaller population.
+                </p>
+                <p>
+                  For example, if 9 out of 10 people in a small county buy the product, the sales rate is 90%.
+                  This is not as surprising as if we were to find a county with a 90% sales rate, where 9,000 out of
+                  10,000 people buy the product.
+                </p>
+              </div>
+              <p class="card-scrolldown text-end">Scroll Down <i class="fa-solid fa-arrow-down"></i></p>
+            </div>
+          </div>
+        </div>
+        <div class="step my-5 py-5 min-vh-100">
+          <div class="card">
+            <div class="card-header">How Surprise Appears on the Map
+              <p class="card-scrollup text-end">Scroll Up <i class="fa-solid fa-arrow-up"></i></p>
+
+            </div>
+            <div class="card-body">
+              <div class="card-text">
+                <p>
+                  The Data Science team has produced a color scale that shows both sales rate and
+                  <strong>surprise</strong>. <br />
+                <ul class="text-start">
+                  <li>At the upper left of the wedge are counties with low rates that are considered surprising.</li>
+                  <li>At the upper right of the wedge are counties with high rates that are considered surprising.</li>
+                  <li>At the bottom of the wedge are counties with either low or high rates, but are not considered
+                    surprising.</li>
+                </ul>
+                </p>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <!-- <p class="float-start" style="background: #fff;"><b>Scroll Up</b> <i class="fa-solid fa-angle-up fa-xl"></i></p> -->
+                  <span class="float-end"><a href="identify.html" class="btn btn-success">Begin Experiment</a></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 fixed-top mt-5" id="vis">
+        <div><img src="../assets/img1.gif" class="w-100 gifs position-absolute" /></div>
+        <div><img src="../assets/img2.gif" style="visibility: hidden;" class="w-100 gifs position-absolute" /></div>
+        <div> <img src="../assets/img3.gif" style="visibility: hidden;" class="w-100 gifs position-absolute" /></div>
+        <div><img src="../assets/img4.gif" style="visibility: hidden;" class="w-100 gifs position-absolute" /> </div>
+        <div> <img src="../assets/img5.gif" style="visibility: hidden;" class="w-100 gifs position-absolute" /></div>
+      </div>
+    </div>
+  </div>
+  <!--<footer class="fixed-bottom"></footer>-->
+  <script src='../js/scroller.js'></script>
+  <script src='../js/sections.js'></script>
+  <script>
+    (function () {
+      const eDown = Array.from(document.querySelectorAll('.card-scrolldown'));
+      eDown.forEach(el => {
+        el.addEventListener('click', function () {
+          el.closest('.step').nextElementSibling.scrollIntoView();
+        });
+      });
+      const eUp = Array.from(document.querySelectorAll('.card-scrollup'));
+      eUp.forEach(el => {
+        el.addEventListener('click', function () {
+          el.closest('.step').previousElementSibling.scrollIntoView();
+        });
+      });
+    })()
+  </script>
+</body>
+
+</html>
