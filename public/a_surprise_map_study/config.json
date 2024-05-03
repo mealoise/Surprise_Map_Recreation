@@ -49,16 +49,7 @@
         "explore": {
             "type": "website",
             "path": "a_surprise_map_study/assets/explore.html",
-            "response": [
-                {
-                    "id": "explore_response",
-                    "prompt": "The Surprise Map summarizes counties with interesting sales rates, based on the national average. A county can show either high surprise, low surprise or no surprise.<br><br>**Task:** Explore the map, then write a short narrative on where you would focus your marketing efforts to increase the sales of the product.",
-                    "required": true,
-                    "location": "belowStimulus",
-                    "type": "longText",
-                    "placeholder": ""
-                }
-            ]
+            "response": []
         },
         "thank-you": {
             "type": "website",

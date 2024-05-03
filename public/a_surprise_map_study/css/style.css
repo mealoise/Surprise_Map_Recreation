@@ -60,7 +60,7 @@ body {
 }
 
 header {
-  background-color: #228be6;
+  background-color: #173d5c;
   color: white;
   padding: 5px 0;
   font-size: 16px;
@@ -225,8 +225,14 @@ html {
   vertical-align: middle;
 }
 
-.light-green {
-  background-color: rgb(193,206,198);
+.dark-green {
+  background-color: rgb(50, 115, 101);
+  color: white;
+}
+
+.dark-green:hover {
+  filter: brightness(90%);
+  color: white;
 }
 
 .intro-header {

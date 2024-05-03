@@ -160,7 +160,7 @@ function removeRow(id) {
       row +=
         '<div class="row-county" id="' +
         county +
-        '"><button class="btn light-green btn-sm" id="' +
+        '"><button class="btn dark-green btn-sm" id="' +
         county +
         '" type="button" onclick="removeRow(this.id)" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click to Remove County" class="form-control btn-danger" style="font-size: 14px; vertical-align:middle;"><i class="fa fa-times"></i> ' +
         ct.recip_county +
@@ -384,7 +384,7 @@ function drawGraph(mapType) {
           row +=
             '<div class="row-county" id="' +
             el.id +
-            '"><button class="btn light-green btn-sm" id="' +
+            '"><button class="btn dark-green btn-sm" id="' +
             el.id +
             '" type="button" onclick="removeRow(this.id)" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Click to Remove County" class="form-control btn-danger" style="font-size: 14px; vertical-align:middle;"><i class="fa fa-times"></i> ' +
             county +
