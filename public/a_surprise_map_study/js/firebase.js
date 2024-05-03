@@ -1,6 +1,7 @@
 let duration = new Date(
   new Date().getTime() - sessionStorage.getItem("startTime")
 );
+
 let diagnisticData = {
   identify: sessionStorage.getItem("identifyDiagnostic"),
   explore: sessionStorage.getItem("exploreDiagnostic"),
