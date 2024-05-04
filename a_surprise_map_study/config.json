@@ -40,7 +40,7 @@
             "path": "a_surprise_map_study/assets/intro.html",
             "nextButtonText": "Begin Experiment",
             "nextButtonLocation": "belowStimulus",
-            "instruction": "This is where your task descriptions will be located for the duration of the experiment. See to the left for a detailed description of how to interact with and understand the visualizations in this study.",
+            "instruction": "This is where your task descriptions will be located for the duration of the experiment. See to the right for a detailed description of how to interact with and understand the visualizations in this study.",
             "instructionLocation": "sidebar",
             "response": []
         },
