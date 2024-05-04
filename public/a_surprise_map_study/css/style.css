@@ -178,9 +178,9 @@ span:hover {
   width: 14%;
 }
 
-html {
+/* html {
   overflow-y: scroll !important;
-}
+} */
 
 .countyPath {
   stroke-dasharray: 50;

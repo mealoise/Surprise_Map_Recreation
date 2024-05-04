@@ -18,7 +18,7 @@
         "logoPath": "revisitAssets/revisitLogoSquare.svg",
         "withProgressBar": true,
         "autoDownloadStudy": false,
-        "sidebar": false
+        "sidebar": true
     },
     "components": {
         "consent": {
@@ -39,17 +39,37 @@
             "type": "website",
             "path": "a_surprise_map_study/assets/intro.html",
             "nextButtonText": "Begin Experiment",
+            "nextButtonLocation": "belowStimulus",
             "response": []
         },
         "identify": {
             "type": "website",
             "path": "a_surprise_map_study/assets/identify.html",
-            "response": []
+            "nextButtonLocation": "sidebar",
+            "response": [
+                {
+                    "id": "identify_response",
+                    "prompt": "The Surprise Map summarizes counties with interesting sales rates, based on the national average. A county can show either high surprise, low surprise or no surprise. <br><br>**Task:** Select five (5) of the worst performing counties, where you would send a team to learn about local sales strategies.",
+                    "required": true,
+                    "location": "sidebar",
+                    "type": "iframe"
+                }
+            ]
         },
         "explore": {
             "type": "website",
+            "nextButtonLocation": "sidebar",
             "path": "a_surprise_map_study/assets/explore.html",
-            "response": []
+            "response": [
+                {
+                    "id": "explore_response",
+                    "prompt": "The Surprise Map summarizes counties with interesting sales rates, based on the national average. A county can show either high surprise, low surprise or no surprise.<br><br>**Task:** Explore the map, then write a short narrative on where you would focus your marketing efforts to increase the sales of the product.",
+                    "required": true,
+                    "location": "sidebar",
+                    "type": "longText",
+                    "placeholder": ""
+                }
+            ]
         },
         "thank-you": {
             "type": "website",
