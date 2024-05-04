@@ -40,16 +40,20 @@
             "path": "a_surprise_map_study/assets/intro.html",
             "nextButtonText": "Begin Experiment",
             "nextButtonLocation": "belowStimulus",
+            "instruction": "This is where your task descriptions will be located for the duration of the experiment. See to the left for a detailed description of how to interact with and understand the visualizations in this study.",
+            "instructionLocation": "sidebar",
             "response": []
         },
         "identify": {
             "type": "website",
             "path": "a_surprise_map_study/assets/identify.html",
             "nextButtonLocation": "sidebar",
+            "instruction": "Select five (5) of the worst performing counties, where you would send a team to learn about local sales strategies.",
+            "instructionLocation": "sidebar",
             "response": [
                 {
                     "id": "identify_response",
-                    "prompt": "The Surprise Map summarizes counties with interesting sales rates, based on the national average. A county can show either high surprise, low surprise or no surprise. <br><br>**Task:** Select five (5) of the worst performing counties, where you would send a team to learn about local sales strategies.",
+                    "prompt": "The Surprise Map summarizes counties with interesting sales rates, based on the national average. A county can show either high surprise, low surprise or no surprise.",
                     "required": false,
                     "location": "sidebar",
                     "type": "iframe"
@@ -60,10 +64,11 @@
             "type": "website",
             "nextButtonLocation": "sidebar",
             "path": "a_surprise_map_study/assets/explore.html",
+            "instruction": "Explore the map, then write a short narrative on where you would focus your marketing efforts to increase the sales of the product.",
             "response": [
                 {
                     "id": "explore_response",
-                    "prompt": "The Surprise Map summarizes counties with interesting sales rates, based on the national average. A county can show either high surprise, low surprise or no surprise.<br><br>**Task:** Explore the map, then write a short narrative on where you would focus your marketing efforts to increase the sales of the product.",
+                    "prompt": "The Surprise Map summarizes counties with interesting sales rates, based on the national average. A county can show either high surprise, low surprise or no surprise.",
                     "required": true,
                     "location": "sidebar",
                     "type": "longText",
