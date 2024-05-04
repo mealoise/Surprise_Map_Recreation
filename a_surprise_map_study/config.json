@@ -50,7 +50,7 @@
                 {
                     "id": "identify_response",
                     "prompt": "The Surprise Map summarizes counties with interesting sales rates, based on the national average. A county can show either high surprise, low surprise or no surprise. <br><br>**Task:** Select five (5) of the worst performing counties, where you would send a team to learn about local sales strategies.",
-                    "required": true,
+                    "required": false,
                     "location": "sidebar",
                     "type": "iframe"
                 }
