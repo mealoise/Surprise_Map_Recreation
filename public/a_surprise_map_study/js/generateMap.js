@@ -1,3 +1,4 @@
+//import { Revisit } from "../../revisitUtilities/revisit-communicate.js"
 let data, geoData, popn, geojson, rankingValues;
 let population = {},
   expData = [];
@@ -397,9 +398,12 @@ function drawGraph(mapType) {
           document.getElementById("ccount").innerText =
             "Selected Counties [" + counties.length + "/5]";
           document.getElementById("ccount").style.fontWeight = "bold";
-          if (count == 5)
+          if (count == 5) {
             document.getElementById("btnContinue").disabled = false;
+            Revisit.postAnswers({ answer: [counties], taskID: "identify_response" });
+          }
         }
+
       }
     }, 400);
   }
