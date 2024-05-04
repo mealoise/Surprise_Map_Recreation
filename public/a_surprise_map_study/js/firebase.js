@@ -11,7 +11,9 @@ let diagnisticData = {
 function sendData() {
   let idata, edata, identifyLog, exploreLog, mapType, url;
   idata = sessionStorage.getItem("identify");
+  console.log(idata);
   edata = sessionStorage.getItem("explore");
+  console.log(edata);
   identifyLog = sessionStorage.getItem("identifyLog");
   identifyClickLog = sessionStorage.getItem("identifyClickLog");
   exploreLog = sessionStorage.getItem("exploreLog");

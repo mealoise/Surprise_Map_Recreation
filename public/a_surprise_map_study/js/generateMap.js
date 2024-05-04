@@ -399,11 +399,13 @@ function drawGraph(mapType) {
             "Selected Counties [" + counties.length + "/5]";
           document.getElementById("ccount").style.fontWeight = "bold";
           if (count == 5) {
-            document.getElementById("btnContinue").disabled = false;
-            Revisit.postAnswers({ answer: [counties], taskID: "identify_response" });
+            //document.getElementById("btnContinue").disabled = false;
+            console.log("Counties: ");
+            const countyResponse = counties.toString();
+            console.log(countyResponse);
+            Revisit.postAnswers({ answer: countyResponse, taskID: "identify_response" });
           }
         }
-
       }
     }, 400);
   }

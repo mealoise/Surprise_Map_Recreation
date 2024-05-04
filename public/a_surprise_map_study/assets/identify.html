@@ -19,6 +19,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://d3js.org/colorbrewer.v1.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="../../revisitUtilities/revisit-communicate.js"></script>
   <script src="../js/generateMap.js"></script>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/shepherd.css" />
@@ -41,9 +42,6 @@
     let startTime = new Date().getTime();
     getdata();
   </script>
-
-  <header style="background-color: rgb(236, 236, 236);">
-  </header>
 
   <div class="container-fluid wrapper">
     <div class="row justify-content-center mt-2">
@@ -152,7 +150,12 @@
     }
 
     function selectPage() {
-      sessionStorage.setItem("identify", counties);
+      let counties = JSON.parse(sessionStorage.getItem('identify'));
+      Revisit.postAnswers({
+        taskID: 'identify_response',
+        answer: counties
+      });
+
       sessionStorage.setItem("identifyLog", JSON.stringify(mouseLog));
       sessionStorage.setItem("identifyClickLog", JSON.stringify(mouseClick));
       sessionStorage.setItem(
