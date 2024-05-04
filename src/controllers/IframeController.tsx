@@ -13,7 +13,7 @@ const PREFIX = '@REVISIT_COMMS';
 const iframeContainerStyle: React.CSSProperties = {
   position: 'relative',
   width: '90%',
-  height: '62vh',
+  height: '70vh',
   overflow: 'hidden',
   display: 'flex',
   justifyContent: 'center',
