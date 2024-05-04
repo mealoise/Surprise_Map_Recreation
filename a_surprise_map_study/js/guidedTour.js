@@ -1,6 +1,6 @@
 let steps;
 
-function c_identify(){
+function c_identify() {
     steps = [{
         title: 'Practice makes perfect! - Trial 1/2',
         text: 'In this section, we explain how to navigate through the experiment as well as respond to the given tasks.',
@@ -8,16 +8,16 @@ function c_identify(){
             on: 'center'
         },
         buttons: [{
-                text: 'Exit',
-                action: tour.cancel
-            },
-			{
+            text: 'Exit',
+            action: tour.cancel
+        },
+        {
             text: 'Next',
             action: tour.next
         }],
     },
 
-	{
+    {
         title: 'Choropleth Map',
         text: 'This Choropleth Map shows sales rates by county for the USA. <br/> Note: You can pan the map by clicking on it then dragging the map left or right. ',
         attachTo: {
@@ -25,17 +25,17 @@ function c_identify(){
             on: 'left'
         },
         buttons: [{
-                text: 'Exit',
-                action: tour.cancel
-            },{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Exit',
+            action: tour.cancel
+        }, {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -47,17 +47,17 @@ function c_identify(){
             on: 'bottom'
         },
         buttons: [{
-                text: 'Exit',
-                action: tour.cancel
-            },{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Exit',
+            action: tour.cancel
+        }, {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -69,82 +69,84 @@ function c_identify(){
             on: 'top'
         },
         buttons: [{
-                text: 'Exit',
-                action: tour.cancel
-            },{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Exit',
+            action: tour.cancel
+        }, {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
     {
         title: 'Select counties',
-        text: '<b>Select 5 counties by clicking on the map.</b>',
+        text: '<b>Select 5 counties by clicking on the map. You must do this to continue!</b>',
         attachTo: {
             element: '#visualsx',
             on: 'bottom'
         },
-        buttons: [ {text: 'Exit',
-                action: () => {
-						document.getElementById("rowCounties").innerHTML = ""
-						document.getElementById("ccount").innerText = "Selected Counties [0/5]"
-						counties = []
-						count = 0
-						row = ""
-						Shepherd.activeTour.cancel()
-					}
-			},{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () => {
-                    if (count == 5){
-                        return Shepherd.activeTour.next()
-                    }
+        buttons: [{
+            text: 'Exit',
+            action: () => {
+                document.getElementById("rowCounties").innerHTML = ""
+                document.getElementById("ccount").innerText = "Selected Counties [0/5]"
+                counties = []
+                count = 0
+                row = ""
+                Shepherd.activeTour.cancel()
+            }
+        }, {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: () => {
+                if (count == 5) {
+                    return Shepherd.activeTour.next()
                 }
             }
+        }
         ]
     },
 
     {
         title: 'Remove County',
         text: 'A county can be removed from the list by clicking on the respective button. However, you will be required to select a total of 5 counties to proceed to the next task. <br/>' +
-                '<b>Click to remove!</b>',
+            '<b>Click to remove!</b>',
         attachTo: {
             element: '#rowCounties',
             on: 'top'
         },
-        buttons: [ {text: 'Exit',
-                action: () => {
-						document.getElementById("rowCounties").innerHTML = ""
-						document.getElementById("ccount").innerText = "Selected Counties [0/5]"
-						counties = []
-						count = 0
-						row = ""
-						Shepherd.activeTour.cancel()
-					}
-				},{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () => {
-                    if (count  < 5) {
-                        return Shepherd.activeTour.next()
-                    }
+        buttons: [{
+            text: 'Exit',
+            action: () => {
+                document.getElementById("rowCounties").innerHTML = ""
+                document.getElementById("ccount").innerText = "Selected Counties [0/5]"
+                counties = []
+                count = 0
+                row = ""
+                Shepherd.activeTour.cancel()
+            }
+        }, {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: () => {
+                if (count < 5) {
+                    return Shepherd.activeTour.next()
                 }
             }
+        }
         ]
     },
 
@@ -155,27 +157,28 @@ function c_identify(){
             element: '#visualsx',
             on: 'bottom'
         },
-        buttons: [ {text: 'Exit',
-                action: () => {
-						document.getElementById("rowCounties").innerHTML = ""
-						document.getElementById("ccount").innerText = "Selected Counties [0/5]"
-						counties = []
-						count = 0
-						row = ""
-						Shepherd.activeTour.cancel()
-					}
-				},{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () =>{
-                    if (count == 5)
-                        return Shepherd.activeTour.next()
-                }
+        buttons: [{
+            text: 'Exit',
+            action: () => {
+                document.getElementById("rowCounties").innerHTML = ""
+                document.getElementById("ccount").innerText = "Selected Counties [0/5]"
+                counties = []
+                count = 0
+                row = ""
+                Shepherd.activeTour.cancel()
             }
+        }, {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: () => {
+                if (count == 5)
+                    return Shepherd.activeTour.next()
+            }
+        }
         ]
     },
 
@@ -186,25 +189,25 @@ function c_identify(){
             on: 'center'
         },
         buttons: [{
-                text: 'Exit',
-                action: () => {
-						document.getElementById("rowCounties").innerHTML = ""
-						document.getElementById("ccount").innerText = "Selected Counties [0/5]"
-						counties = []
-						count = 0
-						row = ""
-						Shepherd.activeTour.cancel()
-					}
-				}, {
-                text: 'Back',
-                action: tour.back
+            text: 'Exit',
+            action: () => {
+                document.getElementById("rowCounties").innerHTML = ""
+                document.getElementById("ccount").innerText = "Selected Counties [0/5]"
+                counties = []
+                count = 0
+                row = ""
+                Shepherd.activeTour.cancel()
             }
+        }, {
+            text: 'Back',
+            action: tour.back
+        }
         ]
     },
-]
+    ]
 }
 
-function s_identify(){
+function s_identify() {
     steps = [{
         title: 'Practice makes perfect! - Trial 1/2',
         text: 'In this section, we explain how to navigate through the experiment as well as respond to the given task.',
@@ -224,22 +227,22 @@ function s_identify(){
             element: 'svg',
             on: 'left'
         },
-       buttons: [{
-                text: 'Exit',
-                action: tour.cancel
-            },{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+        buttons: [{
+            text: 'Exit',
+            action: tour.cancel
+        }, {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
-        {
+    {
         title: 'Zoom Effect',
         text: 'You can use the +/- buttons to also zoom in an out of the interesting regions on the maps. The - button is disabled by default and will only be enabled after you zoom into a region on the map. Click on the map and drag to pan left or right.',
         attachTo: {
@@ -247,17 +250,17 @@ function s_identify(){
             on: 'bottom'
         },
         buttons: [{
-                text: 'Exit',
-                action: tour.cancel
-            },{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Exit',
+            action: tour.cancel
+        }, {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -269,17 +272,17 @@ function s_identify(){
             on: 'top'
         },
         buttons: [{
-                text: 'Exit',
-                action: tour.cancel
-            },{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Exit',
+            action: tour.cancel
+        }, {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -290,61 +293,63 @@ function s_identify(){
             element: '#visualsx',
             on: 'bottom'
         },
-        buttons: [ {text: 'Exit',
-                action: () => {
-						document.getElementById("rowCounties").innerHTML = ""
-						document.getElementById("ccount").innerText = "Selected Counties [0/5]"
-						counties = []
-						count = 0
-						row = ""
-						Shepherd.activeTour.cancel()
-					}
-			},{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () => {
-                    if (count == 5){
-                        return Shepherd.activeTour.next()
-                    }
+        buttons: [{
+            text: 'Exit',
+            action: () => {
+                document.getElementById("rowCounties").innerHTML = ""
+                document.getElementById("ccount").innerText = "Selected Counties [0/5]"
+                counties = []
+                count = 0
+                row = ""
+                Shepherd.activeTour.cancel()
+            }
+        }, {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: () => {
+                if (count == 5) {
+                    return Shepherd.activeTour.next()
                 }
             }
+        }
         ]
     },
 
     {
         title: 'Remove County',
         text: 'A county can be removed from the list by clicking on the respective button. However, you will be required to select a total of 5 counties to proceed to the next task. <br/>' +
-                '<b>Click to remove!</b>',
+            '<b>Click to remove!</b>',
         attachTo: {
             element: '#rowCounties',
             on: 'top'
         },
-        buttons: [ {text: 'Exit',
-                action: () => {
-						document.getElementById("rowCounties").innerHTML = ""
-						document.getElementById("ccount").innerText = "Selected Counties [0/5]"
-						counties = []
-						count = 0
-						row = ""
-						Shepherd.activeTour.cancel()
-					}
-				},{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () => {
-                    if (count  < 5) {
-                        return Shepherd.activeTour.next()
-                    }
+        buttons: [{
+            text: 'Exit',
+            action: () => {
+                document.getElementById("rowCounties").innerHTML = ""
+                document.getElementById("ccount").innerText = "Selected Counties [0/5]"
+                counties = []
+                count = 0
+                row = ""
+                Shepherd.activeTour.cancel()
+            }
+        }, {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: () => {
+                if (count < 5) {
+                    return Shepherd.activeTour.next()
                 }
             }
+        }
         ]
     },
 
@@ -355,27 +360,28 @@ function s_identify(){
             element: '#visualsx',
             on: 'bottom'
         },
-        buttons: [ {text: 'Exit',
-                action: () => {
-						document.getElementById("rowCounties").innerHTML = ""
-						document.getElementById("ccount").innerText = "Selected Counties [0/5]"
-						counties = []
-						count = 0
-						row = ""
-						Shepherd.activeTour.cancel()
-					}
-				},{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () =>{
-                    if (count == 5)
-                        return Shepherd.activeTour.next()
-                }
+        buttons: [{
+            text: 'Exit',
+            action: () => {
+                document.getElementById("rowCounties").innerHTML = ""
+                document.getElementById("ccount").innerText = "Selected Counties [0/5]"
+                counties = []
+                count = 0
+                row = ""
+                Shepherd.activeTour.cancel()
             }
+        }, {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: () => {
+                if (count == 5)
+                    return Shepherd.activeTour.next()
+            }
+        }
         ]
     },
 
@@ -386,25 +392,25 @@ function s_identify(){
             on: 'center'
         },
         buttons: [{
-                text: 'Exit',
-                action: () => {
-						document.getElementById("rowCounties").innerHTML = ""
-						document.getElementById("ccount").innerText = "Selected Counties [0/5]"
-						counties = []
-						count = 0
-						row = ""
-						Shepherd.activeTour.cancel()
-					}
-				}, {
-                text: 'Back',
-                action: tour.back
+            text: 'Exit',
+            action: () => {
+                document.getElementById("rowCounties").innerHTML = ""
+                document.getElementById("ccount").innerText = "Selected Counties [0/5]"
+                counties = []
+                count = 0
+                row = ""
+                Shepherd.activeTour.cancel()
             }
+        }, {
+            text: 'Back',
+            action: tour.back
+        }
         ]
     },
-]
+    ]
 }
 
-function c_compare(){
+function c_compare() {
     steps = [{
         title: 'Practice makes perfect! - Trial 3/12',
         text: 'In this section, we explain how to navigate through the experiment as well as respond to the given task.',
@@ -426,14 +432,14 @@ function c_compare(){
             on: 'left'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -445,14 +451,14 @@ function c_compare(){
             on: 'bottom'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -462,16 +468,16 @@ function c_compare(){
         attachTo: {
             element: '.task',
             on: 'right'
-        },        
+        },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -483,14 +489,14 @@ function c_compare(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -502,18 +508,18 @@ function c_compare(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () => {
-                    if (document.getElementById('inlineRadioX').checked || document.getElementById('inlineRadioY').checked){
-                        return Shepherd.activeTour.next()
-                    }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: () => {
+                if (document.getElementById('inlineRadioX').checked || document.getElementById('inlineRadioY').checked) {
+                    return Shepherd.activeTour.next()
                 }
             }
+        }
         ]
     },
 
@@ -526,16 +532,16 @@ function c_compare(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            }
+            text: 'Back',
+            action: tour.back
+        }
         ]
     },
-]
+    ]
 
 }
 
-function s_compare(){
+function s_compare() {
     steps = [{
         title: 'Practice makes perfect! - Trial 4/12',
         text: 'In this section, we explain how to navigate through the experiment as well as respond to the given task.',
@@ -557,14 +563,14 @@ function s_compare(){
             on: 'left'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -576,14 +582,14 @@ function s_compare(){
             on: 'bottom'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -593,16 +599,16 @@ function s_compare(){
         attachTo: {
             element: '.task',
             on: 'right'
-        },        
+        },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -614,14 +620,14 @@ function s_compare(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -633,18 +639,18 @@ function s_compare(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () => {
-                    if (document.getElementById('inlineRadioX').checked || document.getElementById('inlineRadioY').checked){
-                        return Shepherd.activeTour.next()
-                    }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: () => {
+                if (document.getElementById('inlineRadioX').checked || document.getElementById('inlineRadioY').checked) {
+                    return Shepherd.activeTour.next()
                 }
             }
+        }
         ]
     },
 
@@ -657,15 +663,15 @@ function s_compare(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            }
+            text: 'Back',
+            action: tour.back
+        }
         ]
     },
-]
+    ]
 }
 
-function c_delineate(){
+function c_delineate() {
     steps = [{
         title: 'Practice makes perfect! - Trial 7/12',
         text: 'In this section, we explain how to navigate through the experiment as well as respond to the given task.',
@@ -687,14 +693,14 @@ function c_delineate(){
             on: 'left'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -706,14 +712,14 @@ function c_delineate(){
             on: 'bottom'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -723,16 +729,16 @@ function c_delineate(){
         attachTo: {
             element: '.task',
             on: 'right'
-        },        
+        },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -744,14 +750,14 @@ function c_delineate(){
             on: 'left'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -763,19 +769,19 @@ function c_delineate(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () => {
-                    if (document.getElementById('flexRadioDefault1').checked || document.getElementById('flexRadioDefault2').checked || document.getElementById('flexRadioDefault3').checked
-                    || document.getElementById('flexRadioDefault4').checked || document.getElementById('flexRadioDefault5').checked || document.getElementById('flexRadioDefault6').checked){
-                        return Shepherd.activeTour.next()
-                    }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: () => {
+                if (document.getElementById('flexRadioDefault1').checked || document.getElementById('flexRadioDefault2').checked || document.getElementById('flexRadioDefault3').checked
+                    || document.getElementById('flexRadioDefault4').checked || document.getElementById('flexRadioDefault5').checked || document.getElementById('flexRadioDefault6').checked) {
+                    return Shepherd.activeTour.next()
                 }
             }
+        }
         ]
     },
 
@@ -788,15 +794,15 @@ function c_delineate(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            }
+            text: 'Back',
+            action: tour.back
+        }
         ]
     },
-]
+    ]
 }
 
-function s_delineate(){
+function s_delineate() {
     steps = [{
         title: 'Practice makes perfect! - Trial 8/12',
         text: 'In this section, we explain how to navigate through the experiment as well as respond to the given task.',
@@ -818,14 +824,14 @@ function s_delineate(){
             on: 'left'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -837,14 +843,14 @@ function s_delineate(){
             on: 'bottom'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -854,16 +860,16 @@ function s_delineate(){
         attachTo: {
             element: '.task',
             on: 'left'
-        },        
+        },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -875,14 +881,14 @@ function s_delineate(){
             on: 'left'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -894,19 +900,19 @@ function s_delineate(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () => {
-                    if (document.getElementById('flexRadioDefault1').checked || document.getElementById('flexRadioDefault2').checked || document.getElementById('flexRadioDefault3').checked
-                    || document.getElementById('flexRadioDefault4').checked || document.getElementById('flexRadioDefault5').checked || document.getElementById('flexRadioDefault6').checked){
-                        return Shepherd.activeTour.next()
-                    }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: () => {
+                if (document.getElementById('flexRadioDefault1').checked || document.getElementById('flexRadioDefault2').checked || document.getElementById('flexRadioDefault3').checked
+                    || document.getElementById('flexRadioDefault4').checked || document.getElementById('flexRadioDefault5').checked || document.getElementById('flexRadioDefault6').checked) {
+                    return Shepherd.activeTour.next()
                 }
             }
+        }
         ]
     },
 
@@ -919,16 +925,16 @@ function s_delineate(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            }
+            text: 'Back',
+            action: tour.back
+        }
         ]
     },
-]
+    ]
 
 }
 
-function c_summarize(){
+function c_summarize() {
     steps = [{
         title: 'Practice makes perfect! - Trial 9/12',
         text: 'In this section, we explain how to navigate through the experiment as well as respond to the given task.',
@@ -950,14 +956,14 @@ function c_summarize(){
             on: 'left'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -969,14 +975,14 @@ function c_summarize(){
             on: 'bottom'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -986,16 +992,16 @@ function c_summarize(){
         attachTo: {
             element: '.task',
             on: 'right'
-        },        
+        },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1007,14 +1013,14 @@ function c_summarize(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1026,18 +1032,18 @@ function c_summarize(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () => {
-                    if (document.getElementById('inlineRadioX').checked || document.getElementById('inlineRadioY').checked){
-                        return Shepherd.activeTour.next()
-                    }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: () => {
+                if (document.getElementById('inlineRadioX').checked || document.getElementById('inlineRadioY').checked) {
+                    return Shepherd.activeTour.next()
                 }
             }
+        }
         ]
     },
 
@@ -1050,15 +1056,15 @@ function c_summarize(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            }
+            text: 'Back',
+            action: tour.back
+        }
         ]
     },
-]
+    ]
 }
 
-function s_summarize(){
+function s_summarize() {
     steps = [{
         title: 'Practice makes perfect! - Trial 10/12',
         text: 'In this section, we explain how to navigate through the experiment as well as respond to the given task.',
@@ -1080,14 +1086,14 @@ function s_summarize(){
             on: 'left'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1099,14 +1105,14 @@ function s_summarize(){
             on: 'bottom'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1116,16 +1122,16 @@ function s_summarize(){
         attachTo: {
             element: '.task',
             on: 'right'
-        },        
+        },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1137,14 +1143,14 @@ function s_summarize(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1156,18 +1162,18 @@ function s_summarize(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () => {
-                    if (document.getElementById('inlineRadioX').checked || document.getElementById('inlineRadioY').checked){
-                        return Shepherd.activeTour.next()
-                    }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: () => {
+                if (document.getElementById('inlineRadioX').checked || document.getElementById('inlineRadioY').checked) {
+                    return Shepherd.activeTour.next()
                 }
             }
+        }
         ]
     },
 
@@ -1180,63 +1186,41 @@ function s_summarize(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            }
+            text: 'Back',
+            action: tour.back
+        }
         ]
     },
-]
+    ]
 }
 
-function c_explore(){
+function c_explore() {
     steps = [
-	
-	{
-        title: 'Practice makes perfect! - Trial 2/2',
-        text: 'In this section, we explain how to navigate through the experiment as well as respond to the given task.',
-        attachTo: {
-            on: 'center'
-        },
-        buttons: [{
-            text: 'Next',
-            action: tour.next
-        }],
-    },
-	
-	{
-        title: 'Choropleth Map',
-        text: 'This Choropleth Map shows the sales rates by county for the USA. <br/> Note: You can pan the map by clicking on it then dragging the map left or right.',
-        attachTo: {
-            element: '#visualsx',
-            on: 'left'
-        },
-        buttons: [{
-                text: 'Exit',
-                action: tour.cancel
-				},
-				{
-                text: 'Back',
-                action: tour.back
-				},
-				{
-					text: 'Next',
-					classes: 'shepherd-button-close',
-					action: tour.next
-				}
-        ]
-    },
 
-    {
-        title: 'Zoom Effect',
-        text: 'You can use the +/- buttons to also zoom in an out of the interesting regions on the maps. The - button is disabled by default and will only be enabled after you zoom into a region on the map. Click on the map and drag to pan left or right.',
-        attachTo: {
-            element: '#visualsx',
-            on: 'bottom'
+        {
+            title: 'Practice makes perfect! - Trial 2/2',
+            text: 'In this section, we explain how to navigate through the experiment as well as respond to the given task.',
+            attachTo: {
+                on: 'center'
+            },
+            buttons: [{
+                text: 'Next',
+                action: tour.next
+            }],
         },
-        buttons: [{
+
+        {
+            title: 'Choropleth Map',
+            text: 'This Choropleth Map shows the sales rates by county for the USA. <br/> Note: You can pan the map by clicking on it then dragging the map left or right.',
+            attachTo: {
+                element: '#visualsx',
+                on: 'left'
+            },
+            buttons: [{
                 text: 'Exit',
                 action: tour.cancel
-				},{
+            },
+            {
                 text: 'Back',
                 action: tour.back
             },
@@ -1245,20 +1229,20 @@ function c_explore(){
                 classes: 'shepherd-button-close',
                 action: tour.next
             }
-        ]
-    },
+            ]
+        },
 
-    {
-        title: 'Task',
-        text: 'You will be required to complete the task described in this section.',
-        attachTo: {
-            element: '.task',
-            on: 'top'
-        },        
-        buttons: [{
+        {
+            title: 'Zoom Effect',
+            text: 'You can use the +/- buttons to also zoom in an out of the interesting regions on the maps. The - button is disabled by default and will only be enabled after you zoom into a region on the map. Click on the map and drag to pan left or right.',
+            attachTo: {
+                element: '#visualsx',
+                on: 'bottom'
+            },
+            buttons: [{
                 text: 'Exit',
                 action: tour.cancel
-				},{
+            }, {
                 text: 'Back',
                 action: tour.back
             },
@@ -1267,20 +1251,42 @@ function c_explore(){
                 classes: 'shepherd-button-close',
                 action: tour.next
             }
-        ]
-    },
-
-    {
-        title: 'Narrative',
-        text: 'Provide a short narrative of sales across the USA.',
-        attachTo: {
-            element: '#summary',
-            on: 'top'
+            ]
         },
-        buttons: [{
+
+        {
+            title: 'Task',
+            text: 'You will be required to complete the task described in this section.',
+            attachTo: {
+                element: '.task',
+                on: 'top'
+            },
+            buttons: [{
                 text: 'Exit',
                 action: tour.cancel
-				},{
+            }, {
+                text: 'Back',
+                action: tour.back
+            },
+            {
+                text: 'Next',
+                classes: 'shepherd-button-close',
+                action: tour.next
+            }
+            ]
+        },
+
+        {
+            title: 'Narrative',
+            text: 'Provide a short narrative of sales across the USA.',
+            attachTo: {
+                element: '#summary',
+                on: 'top'
+            },
+            buttons: [{
+                text: 'Exit',
+                action: tour.cancel
+            }, {
                 text: 'Back',
                 action: tour.back
             },
@@ -1288,38 +1294,38 @@ function c_explore(){
                 text: 'Next',
                 classes: 'shepherd-button-close',
                 action: () => {
-                    if (document.getElementById('summary').value != ''){
+                    if (document.getElementById('summary').value != '') {
                         return Shepherd.activeTour.next()
                     }
                 }
             }
-        ]
-    },
-
-
-    {
-        title: 'All Set!',
-        text: 'You are all set and ready to continue. <br/><b>Click Exit!</b>',
-        attachTo: {
-            on: 'center'
+            ]
         },
-        buttons: [{
+
+
+        {
+            title: 'All Set!',
+            text: 'You are all set and ready to continue. <br/><b>Click Exit!</b>',
+            attachTo: {
+                on: 'center'
+            },
+            buttons: [{
                 text: 'Exit',
                 action: () => {
-					document.getElementById('summary').value = ''
-					Shepherd.activeTour.cancel()
-					}
-				},{
+                    document.getElementById('summary').value = ''
+                    Shepherd.activeTour.cancel()
+                }
+            }, {
                 text: 'Back',
                 action: tour.back
             }
-        ]
-    },
-]
+            ]
+        },
+    ]
 
 }
 
-function s_explore(){
+function s_explore() {
     steps = [{
         title: 'Practice makes perfect! - Trial 2/2',
         text: 'In this section, we explain how to navigate through the experiment as well as respond to the given task.',
@@ -1340,23 +1346,23 @@ function s_explore(){
             element: 'svg',
             on: 'left'
         },
-       buttons: [{
-                text: 'Exit',
-                action: tour.cancel
-				},
-				{
-                text: 'Back',
-                action: tour.back
-				},
-				{
-					text: 'Next',
-					classes: 'shepherd-button-close',
-					action: tour.next
-				}
+        buttons: [{
+            text: 'Exit',
+            action: tour.cancel
+        },
+        {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
- {
+    {
         title: 'Zoom Effect',
         text: 'You can use the +/- buttons to zoom in an out of the interesting regions on the maps. The - button is disabled by default and will only be enabled after you zoom into a region on the map. Click on the map and drag to pan left or right.',
         attachTo: {
@@ -1364,17 +1370,17 @@ function s_explore(){
             on: 'bottom'
         },
         buttons: [{
-                text: 'Exit',
-                action: tour.cancel
-				},{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Exit',
+            action: tour.cancel
+        }, {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1384,48 +1390,21 @@ function s_explore(){
         attachTo: {
             element: '.task',
             on: 'top'
-        },        
-        buttons: [{
-                text: 'Exit',
-                action: tour.cancel
-				},{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
-        ]
-    },
-
-    {
-        title: 'Narrative',
-        text: 'Provide a short narrative of sales across the USA.',
-        attachTo: {
-            element: '#summary',
-            on: 'top'
         },
         buttons: [{
-                text: 'Exit',
-                action: tour.cancel
-				},{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () => {
-                    if (document.getElementById('summary').value != ''){
-                        return Shepherd.activeTour.next()
-                    }
-                }
-            }
+            text: 'Exit',
+            action: tour.cancel
+        }, {
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
-
 
     {
         title: 'All Set!',
@@ -1434,23 +1413,23 @@ function s_explore(){
             on: 'center'
         },
         buttons: [{
-                text: 'Exit',
-                action: () => {
-					document.getElementById('summary').value = ''
-					Shepherd.activeTour.cancel()
-					}
-				},{
-                text: 'Back',
-                action: tour.back
+            text: 'Exit',
+            action: () => {
+                //document.getElementById('summary').value = ''
+                Shepherd.activeTour.cancel()
             }
+        }, {
+            text: 'Back',
+            action: tour.back
+        }
         ]
     },
-]
+    ]
 
 }
 
 
-function c_rank(){
+function c_rank() {
     steps = [{
         title: 'Practice makes perfect! - Trial 5/12',
         text: 'In this section, we explain how to navigate through the experiment as well as respond to the given task.',
@@ -1472,14 +1451,14 @@ function c_rank(){
             on: 'left'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1491,14 +1470,14 @@ function c_rank(){
             on: 'bottom'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1508,16 +1487,16 @@ function c_rank(){
         attachTo: {
             element: '.task',
             on: 'right'
-        },        
+        },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1529,14 +1508,14 @@ function c_rank(){
             on: 'bottom'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1548,19 +1527,19 @@ function c_rank(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () => {
-                    if (document.getElementById('flexRadioDefault1').checked || document.getElementById('flexRadioDefault2').checked || document.getElementById('flexRadioDefault3').checked
-                    || document.getElementById('flexRadioDefault4').checked || document.getElementById('flexRadioDefault5').checked || document.getElementById('flexRadioDefault6').checked){
-                        return Shepherd.activeTour.next()
-                    }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: () => {
+                if (document.getElementById('flexRadioDefault1').checked || document.getElementById('flexRadioDefault2').checked || document.getElementById('flexRadioDefault3').checked
+                    || document.getElementById('flexRadioDefault4').checked || document.getElementById('flexRadioDefault5').checked || document.getElementById('flexRadioDefault6').checked) {
+                    return Shepherd.activeTour.next()
                 }
             }
+        }
         ]
     },
 
@@ -1573,12 +1552,12 @@ function c_rank(){
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            }
+            text: 'Back',
+            action: tour.back
+        }
         ]
     },
-]
+    ]
 }
 
 function s_rank() {
@@ -1603,14 +1582,14 @@ function s_rank() {
             on: 'left'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1622,14 +1601,14 @@ function s_rank() {
             on: 'bottom'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1639,16 +1618,16 @@ function s_rank() {
         attachTo: {
             element: '.task',
             on: 'right'
-        },        
+        },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1660,14 +1639,14 @@ function s_rank() {
             on: 'bottom'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: tour.next
-            }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: tour.next
+        }
         ]
     },
 
@@ -1679,19 +1658,19 @@ function s_rank() {
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            },
-            {
-                text: 'Next',
-                classes: 'shepherd-button-close',
-                action: () => {
-                    if (document.getElementById('flexRadioDefault1').checked || document.getElementById('flexRadioDefault2').checked || document.getElementById('flexRadioDefault3').checked
-                    || document.getElementById('flexRadioDefault4').checked || document.getElementById('flexRadioDefault5').checked || document.getElementById('flexRadioDefault6').checked){
-                        return Shepherd.activeTour.next()
-                    }
+            text: 'Back',
+            action: tour.back
+        },
+        {
+            text: 'Next',
+            classes: 'shepherd-button-close',
+            action: () => {
+                if (document.getElementById('flexRadioDefault1').checked || document.getElementById('flexRadioDefault2').checked || document.getElementById('flexRadioDefault3').checked
+                    || document.getElementById('flexRadioDefault4').checked || document.getElementById('flexRadioDefault5').checked || document.getElementById('flexRadioDefault6').checked) {
+                    return Shepherd.activeTour.next()
                 }
             }
+        }
         ]
     },
 
@@ -1704,10 +1683,10 @@ function s_rank() {
             on: 'right'
         },
         buttons: [{
-                text: 'Back',
-                action: tour.back
-            }
+            text: 'Back',
+            action: tour.back
+        }
         ]
     },
-]
+    ]
 }
